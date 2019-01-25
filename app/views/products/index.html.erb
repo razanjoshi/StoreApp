@@ -1,5 +1,8 @@
 <h1>Product Listing</h1>
 <h3>Here's the list of all the products available.</h3>
+<% if user_signed_in? %>
+  <%= link_to 'Create a Product', new_product_path, class: "btn btn-warning btn-new-product" %>
+<% end %>
 <table class="table">
   <tr>
     <th scope="col">Product Name</th>
