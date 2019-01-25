@@ -3,21 +3,31 @@
 <% if user_signed_in? %>
   <%= link_to 'Create a Product', new_product_path, class: "btn btn-warning btn-new-product" %>
 <% end %>
+<%= form_tag(root_path, method: :get) do %>
+  <%= text_field_tag :term %>
+  <%= submit_tag 'Search' %>
+<% end %>
 <table class="table">
   <tr>
     <th scope="col">Product Name</th>
     <th scope="col">Description</th>
     <th scope="col">Release Date</th>
+    <th scope="col">Category</th>
     <th scope="col">More Info</th>
     <th scope="col"></th>
   </tr>
  
   <% @products.each do |product| %>
+    <% category_id = product.category_id %>
     <tr>
       <td><%= product.name %></td>
       <td><%= product.description %></td>
       <td><%= product.release_date.strftime("releasing on %m/%d/%Y") %></td>
-      <td><%= link_to 'Show', product_path(product.id) %></td>
+      <td><%= product.nice_category(category_id) %></td>
+      <td><%= link_to 'Show', product_path(product.id), class: 'btn btn-primary' %></td>
+      <% if @current_user && @current_user.email == product.created_by %>
+        <td><%= button_to 'Destroy', product_path(product), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </tr>
   <% end %>
 </table>

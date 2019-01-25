@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   # devise_for :users
   # get 'products/new'
   # get 'products', to: 'products#show'
-  resources :products, only: %i[new create show destroy]
-  get 'products/:id' => 'products#show'
+  resources :products
   root 'products#index'
 
   devise_for :users do
