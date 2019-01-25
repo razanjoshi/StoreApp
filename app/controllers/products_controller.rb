@@ -8,7 +8,20 @@ class ProductsController < ApplicationController
   	@products = Product.all
   end
 
+  def create
+    @product = Product.new params
+    @product.category_id = params[:category_id] 
+    @product.save
+  end
+
   def show
-  	
+    binding.pry
+  	@product = Product.find(params[:id])
+  end
+  
+  private
+
+  def product_params
+    params.require(:product).permit(:id, :name, :description, :category_id)
   end
 end

@@ -5,6 +5,7 @@
     <th>Product Name</th>
     <th>Description</th>
     <th>Release Date</th>
+    <th>More Info</th>
     <th></th>
   </tr>
  
@@ -13,7 +14,7 @@
       <td><%= product.name %></td>
       <td><%= product.description %></td>
       <td><%= product.release_date.strftime("releasing on %m/%d/%Y") %></td>
-     
+      <td><%= link_to 'Show', product_path(product.id) %></td>
     </tr>
   <% end %>
 </table>
