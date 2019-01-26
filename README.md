@@ -7,6 +7,11 @@ This is a small test app called StoreAPP
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 A simple search button searches from the product name too.
 
+I have made some dummy datas for the beginning thus please rake the seed file before you start.
+```
+bundle exec rake db:seed
+```
+
 ### Prerequisites
 
 Clone the repo
