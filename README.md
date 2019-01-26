@@ -2,6 +2,8 @@
 
 This is a small test app called StoreAPP
 
+![capture](https://user-images.githubusercontent.com/4223130/51780408-0a001580-20c3-11e9-9909-edcf5a3b6981.JPG)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
