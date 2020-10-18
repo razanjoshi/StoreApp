@@ -45,6 +45,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
+  gem 'simplecov', :require => false
   gem 'rails-controller-testing'
 end
 
